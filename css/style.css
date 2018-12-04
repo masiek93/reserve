@@ -15,7 +15,7 @@ html {
 }
 body {
   height:100%;
-  background-color: #eff7f7;
+  background-color: #f7f7f7;
 }
 
 p {
@@ -38,6 +38,7 @@ img {
 
 .container{
     height:100%;
+	width: 800px;
 }
 
 .nav-item{
@@ -52,8 +53,28 @@ img {
   background-color: #f5f5f5;
 }
 
+.dateSelector {
+	display: flex; 
+	justify-content: center; 
+	align-items: center;
+}
+
+.active {
+	border-color: #17a2b8!important;
+}
+
+
+.timeSelector { 
+	justify-content: center; 
+	align-items: center;
+	padding-top: 20px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #dee2e6!important;
+	/* border-right: 1px solid #dee2e6!important; 
+	border-left: 1px solid #dee2e6!important; */
+}
+
 #mainContainer{
-	background-color: #eff7f7;
 	margin-top:15px;
 	margin-bottom:15px;
 }
