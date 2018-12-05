@@ -38,6 +38,10 @@ img {
    max-height:100%;
 }
 
+h1 {
+	text-align:center;
+}
+
 .container{
     height:100%;
 	width: 800px;
@@ -74,6 +78,27 @@ img {
 	border-bottom: 1px solid #dee2e6!important;
 	/* border-right: 1px solid #dee2e6!important; 
 	border-left: 1px solid #dee2e6!important; */
+}
+
+.info{
+	width:190px;
+	height:30px;
+	border-bottom-style: solid;
+	/*border-style: solid;*/
+	border-width: 1px;
+	float:left;
+	text-align: center;
+	display: flex; 
+	justify-content: center; 
+	align-items: center;
+	margin-bottom:5px;
+}
+
+.usluga{
+	width:200px;
+	height:100px;
+	border-style: solid;
+	border-width: 1px;
 }
 
 #mainContainer{
