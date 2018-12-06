@@ -18,6 +18,7 @@ body {
   height:100%;
   width:100%;
   background-color: #f7f7f7;
+  font-family: 'Lato', sans-serif;	
 }
 
 p {
@@ -82,12 +83,17 @@ h1 {
 
 .service_table{
 	height: 200px;
+	width:770px;
+}
+
+.service_row{
+	height:34px;
+	border: 1px solid #dee2e6;
 }
 
 .info {
 	width:190px;
 	height:30px;
-	border-bottom-style: solid;
 	/*border-style: solid;*/
 	border-width: 1px;
 	float:left;
@@ -99,28 +105,15 @@ h1 {
 }
 
 .service {
-	width:370px;
+	width:360px;
 	height:30px;
-	border-bottom-style: solid;
-	border-bottom-color: #dee2e6;  /*    border: 1px solid #dee2e6!important; */
-	/*border-style: solid;*/
-	border-width: 1px;
 	float:left;
-	text-align: left;
-	display: flex; 
-	/*justify-content: center; */
-	align-items: center;
-	margin-bottom:5px;
 }
+
 .time {
 	width:100px;
 	height:30px;
-	border-bottom-style: solid;
-	border-bottom-color: #dee2e6;
-	/*border-style: solid;*/
-	border-width: 1px;
 	float:left;
-	/*text-align: center;*/
 	display: flex; 
 	justify-content: left; 
 	align-items: center;
@@ -129,10 +122,6 @@ h1 {
 .price {
 	width:100px;
 	height:30px;
-	border-bottom-style: solid;
-	border-bottom-color: #dee2e6;
-	/*border-style: solid;*/
-	border-width: 1px;
 	float:left;
 	text-align: center;
 	display: flex; 
@@ -144,10 +133,6 @@ h1 {
 	position: relative;
 	width:200px;
 	height:30px;
-	border-bottom-style: solid;
-	border-bottom-color: #dee2e6;
-	/*border-style: solid;*/
-	border-width: 1px;
 	float:left;
 	display: flex; 
 	margin-bottom:5px;
