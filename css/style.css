@@ -80,7 +80,11 @@ h1 {
 	border-left: 1px solid #dee2e6!important; */
 }
 
-.info{
+.service_table{
+	height: 200px;
+}
+
+.info {
 	width:190px;
 	height:30px;
 	border-bottom-style: solid;
@@ -94,11 +98,69 @@ h1 {
 	margin-bottom:5px;
 }
 
+.service {
+	width:370px;
+	height:30px;
+	border-bottom-style: solid;
+	/*border-style: solid;*/
+	border-width: 1px;
+	float:left;
+	text-align: left;
+	display: flex; 
+	/*justify-content: center; */
+	align-items: center;
+	margin-bottom:5px;
+}
+.time {
+	width:100px;
+	height:30px;
+	border-bottom-style: solid;
+	/*border-style: solid;*/
+	border-width: 1px;
+	float:left;
+	/*text-align: center;*/
+	display: flex; 
+	justify-content: left; 
+	align-items: center;
+	margin-bottom:5px;
+}
+.price {
+	width:100px;
+	height:30px;
+	border-bottom-style: solid;
+	/*border-style: solid;*/
+	border-width: 1px;
+	float:left;
+	text-align: center;
+	display: flex; 
+	justify-content: left; 
+	align-items: center;
+	margin-bottom:5px;
+}
+.reserve {
+	position: relative;
+	width:200px;
+	height:30px;
+	border-bottom-style: solid;
+	/*border-style: solid;*/
+	border-width: 1px;
+	float:left;
+	display: flex; 
+	margin-bottom:5px;
+}
+
 .usluga{
 	width:200px;
 	height:100px;
 	border-style: solid;
 	border-width: 1px;
+}
+
+.button{
+	position: absolute;
+	right: 0px;
+	height: 29px;
+	text-justify:center
 }
 
 #mainContainer{
