@@ -102,6 +102,7 @@ h1 {
 	width:370px;
 	height:30px;
 	border-bottom-style: solid;
+	border-bottom-color: #dee2e6;  /*    border: 1px solid #dee2e6!important; */
 	/*border-style: solid;*/
 	border-width: 1px;
 	float:left;
@@ -115,6 +116,7 @@ h1 {
 	width:100px;
 	height:30px;
 	border-bottom-style: solid;
+	border-bottom-color: #dee2e6;
 	/*border-style: solid;*/
 	border-width: 1px;
 	float:left;
@@ -128,6 +130,7 @@ h1 {
 	width:100px;
 	height:30px;
 	border-bottom-style: solid;
+	border-bottom-color: #dee2e6;
 	/*border-style: solid;*/
 	border-width: 1px;
 	float:left;
@@ -142,6 +145,7 @@ h1 {
 	width:200px;
 	height:30px;
 	border-bottom-style: solid;
+	border-bottom-color: #dee2e6;
 	/*border-style: solid;*/
 	border-width: 1px;
 	float:left;
@@ -159,8 +163,8 @@ h1 {
 .button{
 	position: absolute;
 	right: 0px;
-	height: 29px;
-	text-justify:center
+	height: 25px;
+	line-height: 0;
 }
 
 #mainContainer{
