@@ -67,6 +67,13 @@ h1 {
 	cursor: pointer;
 }
 
+.dateSelectorArrows {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
 .active {
 	border-color: #17a2b8!important;
 }
