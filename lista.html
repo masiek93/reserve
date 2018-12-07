@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="css/style.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 	
 	<!-- <link rel="icon" href="../../favicon.ico"> ikonka do dodania później -->
     <title>Rezerwacja terminu | Lista usług</title>
@@ -18,41 +19,52 @@
 	<div id="mainContainer">
 		<div id="context" class="container" >
 			<h1 class="display-4">Rezerwacja</h1>
-			<div class="square">
-				<div class="rectangle">
-				<a href="termin.html" class="text">FRYZJER</a>
+				<div class="service_table">
+					<div class="service_row">
+						<div class="service">Strzyżenie męskie </div>
+						<div class="time">20-30 min</div>
+						<div class="price">20-30 zł</div>
+						<a href="termin.html"><div class="reserve"><button type="button" class="btn btn-info button">Rezerwuj</button></div></a>
+						<div style="clear:both"></div>
+					</div>
+					<div class="service_row">
+						<div class="service">Mycie włosów + strzyżenie damskie </div>
+						<div class="time">20-30 min</div>
+						<div class="price">20-30 zł</div>
+						<a href="termin.html"><div class="reserve"><button type="button" class="btn btn-info button">Rezerwuj</button></div></a>
+						<div style="clear:both"></div>
+					</div>
+					<div class="service_row">
+						<div class="service">Farbowanie+refleksy+modelowanie</div>
+						<div class="time">20-30 min</div>
+						<div class="price">20-30 zł</div>
+						<a href="termin.html"><div class="reserve"><button type="button" class="btn btn-info button">Rezerwuj</button></div></a>
+						<div style="clear:both"></div>
+					</div>
+					<div class="service_row">
+						<div class="service">Baleyage+strzyżenie</div>
+						<div class="time">20-30 min</div>
+						<div class="price">20-30 zł</div>
+						<a href="termin.html"><div class="reserve"><button type="button" class="btn btn-info button">Rezerwuj</button></div></a>	
+						<div style="clear:both"></div>
+					</div>
 				</div>
-				<br/>
-				<div class="rectangle">
-				<a href="termin.html" class="text">MECHANIK</a>
-				</div>
-				<br/>
-				<div class="rectangle">
-				<a href="termin.html" class="text">WETERYNARZ</a>
-				</div>
-				<br/>
-			<div class="btn-group dropright">
-				<button type="button" class="btn btn-secondary dropdown-toggle bg-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">FRYZJER
-				</button>
-				<div class="dropdown-menu dropright bg-dropdown">
-					<a class="dropdown-item" href="termin.html">Strzyżenie męskie sdfdsfsdfs</a>
-					<a class="dropdown-item" href="termin.html">Strzyżenie żeńskie</a>
-					<a class="dropdown-item" href="termin.html">Strzyżenie inne</a>
-					<a class="dropdown-item" href="termin.html">Strzyżenie inne</a>
-				</div>
-			</div>
-			<br/>
-			<br/>
-			<div class="btn-group dropright">
-				<button type="button" class="btn btn-secondary dropdown-toggle bg-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				MECHANIK
-				</button>
-				<div class="dropdown-menu bg-warning">
-				<a class="dropdown-item" href="termin.html">Wymiana opon</a>
-				<a class="dropdown-item" href="termin.html">Inne</a>
-			</div>
-			</div>
-			</div>
+					<div class="table-responsive">
+						<table class="table">
+							<tr>
+								<th scope="row">Baleyage+strzyżenie</th>
+								<td>20-30 min</td>
+								<td>20-30 zł</td>
+								<td><a href="termin.html"><div class="reserve"><button type="button" class="btn btn-info button">Rezerwuj</button></div></a></td>
+							</tr>
+							<tr>
+								<th scope="row" class="service">Baleyage+strzyżenie</th>
+								<td>20-30 min</td>
+								<td>20-30 zł</td>
+								<td><a href="termin.html"><div class="reserve"><button type="button" class="btn btn-info button">Rezerwuj</button></div></a></td>
+							</tr>
+						</table>
+					</div>
 		</div>
 		</div>
 	<!-- <div w3-include-html="footer.html"></div> -->
