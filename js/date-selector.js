@@ -67,7 +67,11 @@ function selectDate (elemId, date){
     console.log('selectDate: ', elemId, date);
     var selectedDate = document.getElementById(elemId);
     var dateSelectorElements = document.getElementsByClassName('dateSelector');
-    //console.log('selectDate: ', selectedDate, dateSelectorElements);
+
+    for(var i=0; i<dateSelectorElements.length; i++){
+        dateSelectorElements[i].classList.remove('active');
+    }
+    selectedDate.classList.add('active');
 }
 
 function selectTime (time){
