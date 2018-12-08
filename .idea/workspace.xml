@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="89f550e2-f539-4233-b75f-5a93711bf2d7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/date-selector.js" afterPath="$PROJECT_DIR$/js/date-selector.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/termin.html" afterPath="$PROJECT_DIR$/termin.html" />
     </list>
     <ignored path="reserve.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -640,12 +638,12 @@
       <created>1544200301753</created>
       <option name="number" value="Default" />
       <updated>1544200301753</updated>
-      <workItem from="1544200305448" duration="13864000" />
+      <workItem from="1544200305448" duration="14091000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13864000" />
+    <option name="totallyTimeSpent" value="14091000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
