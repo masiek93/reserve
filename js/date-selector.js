@@ -25,6 +25,7 @@ var calendarMap =
 };
 var availableHours = ['7:00', '7:30', '8:00', '8:30', '9:00', '9:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30'];
 var calPosition = 0;
+var selectedDate;
 
 // / hardcoded mock
 
@@ -33,6 +34,8 @@ init();
 function init(){
     var dateSelectors =  document.getElementsByClassName('dateSelector');
     fillDates(dateSelectors, calPosition);
+    selectedDate = document.getElementsByClassName('active')[0].textContent;
+    console.log('init | selectedDate ', selectedDate);
 }
 
 function fillDates (dateSelectors, position){

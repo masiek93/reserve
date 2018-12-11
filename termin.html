@@ -18,32 +18,52 @@
 	<div id="mainContainer">
 		<div id="context" class="container" >
 			<h1 class="display-4">Termin</h1>
-			<a href="lista.html"> > lista</a>
+			<a class="nav-link-back" href="lista.html"> < cofnij</a>
 			<br />
 			<br />
-			
-			
-			  <div class="row align-middle text-center" style="padding-left:20px; padding-right:20px; height: 40px;" >
-				<div id="selectLeft" class="col-1 btn btn-info btn-arrow-left dateSelectorArrows" onClick="dateSelectLeft()"><</div>
-				<div id="dateCol1" class="col-2 border dateSelector" onClick="selectDate(this.id, this.textContent)">29.11</div>
-				<div id="dateCol2" class="col-2 border dateSelector" onClick="selectDate(this.id, this.textContent)">30.11</div>
-				<div id="dateCol3" class="col-2 border dateSelector active" onClick="selectDate(this.id, this.textContent)">01.12</div>
-				<div id="dateCol4" class="col-2 border dateSelector" onClick="selectDate(this.id, this.textContent)">02.12</div>
-				<div id="dateCol5" class="col-2 border dateSelector" onClick="selectDate(this.id, this.textContent)">03.12</div>
-				<div id="selectRight" class="col-1 btn btn-info btn-arrow-right dateSelectorArrows" onClick="dateSelectRight()">></div>
-			  </div>
-			  <div class="row align-middle text-center " style="padding-left:20px; padding-right:20px;" >
+			<div class="row sel-item-info">
+				Usługa:
+				<button type="button" class="btn btn-time" >Strzyżenie męskie</button>
+			</div>
+			<div class="row sel-item-info">
+				Pracownik:
+				<button type="button" class="btn btn-time" >Dowolny Pracownik</button>
+			</div>
+			<div class="row align-middle text-center" style="padding-left:20px; padding-right:20px; height: 40px;">
+				<div id="selectLeft" class="col-1 btn btn-arrow-left dateSelectorArrows"
+					 onClick="dateSelectLeft()"><
+				</div>
+				<div id="dateCol1" class="col-2 border dateSelector" onClick="selectDate(this.id, this.textContent)">
+					29.11
+				</div>
+				<div id="dateCol2" class="col-2 border dateSelector" onClick="selectDate(this.id, this.textContent)">
+					30.11
+				</div>
+				<div id="dateCol3" class="col-2 border dateSelector active"
+					 onClick="selectDate(this.id, this.textContent)">01.12
+				</div>
+				<div id="dateCol4" class="col-2 border dateSelector" onClick="selectDate(this.id, this.textContent)">
+					02.12
+				</div>
+				<div id="dateCol5" class="col-2 border dateSelector" onClick="selectDate(this.id, this.textContent)">
+					03.12
+				</div>
+				<div id="selectRight" class="col-1 btn btn-info btn-arrow-right dateSelectorArrows"
+					 onClick="dateSelectRight()">>
+				</div>
+			</div>
+			<div class="row align-middle text-center " style="padding-left:20px; padding-right:20px;">
 				<div class="col-1"></div>
 				<div class="col-10 timeSelector">
 					Wybierz godzinę:
 					<br/>
 					<br/>
-					<button type="button" class="btn btn-outline-info" onClick="selectTime(this.textContent)">9:00</button>
-					<button type="button" class="btn btn-outline-info" onClick="selectTime(this.textContent)">9:30</button>
-					<button type="button" class="btn btn-outline-info" onClick="selectTime(this.textContent)">10:00</button>
-					<button type="button" class="btn btn-outline-info" onClick="selectTime(this.textContent)">10:30</button>
-					<button type="button" class="btn btn-outline-info" onClick="selectTime(this.textContent)">11:00</button>
-					<button type="button" class="btn btn-outline-info" onClick="selectTime(this.textContent)">11:30</button>
+					<button type="button" class="btn btn-time" onClick="selectTime(this.textContent)">9:00</button>
+					<button type="button" class="btn btn-time" onClick="selectTime(this.textContent)">9:30</button>
+					<button type="button" class="btn btn-time" onClick="selectTime(this.textContent)">10:00</button>
+					<button type="button" class="btn btn-time" onClick="selectTime(this.textContent)">10:30</button>
+					<button type="button" class="btn btn-time" onClick="selectTime(this.textContent)">11:00</button>
+					<button type="button" class="btn btn-time" onClick="selectTime(this.textContent)">11:30</button>
 
 				</div>
 				<div class="col-1"></div>
