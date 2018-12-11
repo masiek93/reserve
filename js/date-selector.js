@@ -81,3 +81,7 @@ function selectTime (time){
     console.log('selectTime: ', time);
 }
 
+function href(location){
+    window.location.href = location;
+}
+
