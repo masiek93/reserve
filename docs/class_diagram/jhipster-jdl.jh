@@ -1,0 +1,87 @@
+entity Address {
+	id Long,
+    city String,
+    postalCode String,
+    street String,
+    houseNumber String,
+    flatNumber String
+}
+
+entity Salon {
+	id Long,
+    name String,
+    startHour String,
+    endHour String,
+}
+
+entity Employee {
+	id Long,
+    name String,
+    lastName String,
+    mail String,
+    password String,
+    type EmployeeType,
+    freeTerms String,
+    occupiedTerms String
+}
+
+enum EmployeeType {
+    STANDARD, LEADER, BOSS, ADMIN
+}
+
+entity Calendar {
+	id Long,
+    year String,
+    mask String
+}
+
+entity Client {
+	id Long,
+	name String,
+	lastName String,
+	tel String,
+    mail String,
+    password String
+}
+
+entity Service {
+	id Long,
+	name String,
+	duration String,
+	price String,
+    description String
+}
+
+entity Appointment {
+	id Long
+}
+
+// defining multiple oneToOne relationship
+relationship OneToOne {
+	Salon{address} to Address,
+}
+
+relationship OneToMany {
+	Salon{employee} to Employee,
+    Salon{calendar} to Calendar,
+    Employee{calendar} to Calendar,
+    Employee{servicesOffered} to Service,
+    Employee{appointmentsReserved} to Appointment,
+    Service{appointmemts} to Appointment,
+    Client{appointmemts} to Appointment,
+    
+}
+
+
+// Set pagination options
+// paginate JobHistory, Employee with infinite-scroll
+// paginate Job with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+// service all with serviceImpl except Employee, Job
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
