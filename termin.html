@@ -3,11 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="css/style.css" rel="stylesheet">
-	
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+  <script src="js/include-html.js"></script>
 	<!-- <link rel="icon" href="../../favicon.ico"> ikonka do dodania później -->
     <title>Rezerwacja terminu | Lista terminów</title>
 	<!-- <script src="js/include-html.js" ></script> skrypt do ładowania elementów wspólnych każdej podstrony -->
@@ -20,6 +21,7 @@
 			<h1 class="display-4">Termin</h1>
 			<div class="row row-term row-text row-nav-link-back">
 				<div class="nav-link-back" onClick="href('lista.html')">< cofnij</div>
+        <div class="nav-link-back" onClick="href('formularz.html')">dalej ></div>
 			</div>
 			<div class="row row-term sel-item-info">
 				Usługa:
@@ -57,10 +59,12 @@
 			  <br/>
 			  <br/>
 		</div>
-	</div>
-	
+  </div>
+  <div w3-include-html="footer.html"></div>
+  <script>includeHTML();</script>
+
 	<!-- <div w3-include-html="footer.html"></div> -->
-	
+
 	<!-- <script>includeHTML();</script> -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

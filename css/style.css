@@ -233,6 +233,11 @@ h1 {
 	line-height:0px;
 }
 
+.icon{
+	font-size: 18px;
+	padding: 8px;
+}
+
 #footer
 {
 	color: black;
@@ -251,7 +256,7 @@ h1 {
 	/* border-radius: 5px; */
 	min-height: 300px;
 	text-align: justify;
-    text-justify: inter-word;
+  text-justify: inter-word;
 }
 
 /* Responsive text
@@ -277,4 +282,3 @@ html {
     font-size: 1.6rem;
   }
 } */
-
