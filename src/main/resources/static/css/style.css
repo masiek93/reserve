@@ -97,7 +97,7 @@ h1 {
 
 .row-term {
 	display: flex;
-	justify-content: center!important;
+	justify-content: center;
 	align-items: stretch;
 	margin-left:.35rem;
 	margin-right:.35rem;
