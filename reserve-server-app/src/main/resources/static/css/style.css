@@ -1,4 +1,6 @@
 /* Colors definition */
+/*
+RED COLOR
 :root {
 	--main-color: #f16f6f;
 	--main-color-fade: #914646;
@@ -6,6 +8,27 @@
 	--text-color: #721c24;
 	--main-text-color: rgba(0, 0, 0, 0.8);
 }
+*/
+
+/* GREEN COLOR */
+/*:root {
+ 	--main-color: #20CCB0;
+ 	--main-color-fade: #0C4C42;
+ 	--main-color-bright: #d0efea;
+ 	--text-color: #0C4C42;
+ 	--main-text-color: rgba(0, 0, 0, 0.8);
+}*/
+
+ /* AQUA COLOR */
+:root {
+  	--main-color: #20CFD5;
+  	--main-color-fade: #0C4C4A;
+  	--main-color-bright: #ddfbfa;
+  	--text-color: #0C4C4A;
+  	--main-text-color: rgba(0, 0, 0, 0.8);
+}
+
+
 
 @media (max-width: 575.98px) {
 	body {
@@ -287,8 +310,8 @@ h1 {
 
 .sel-item-info {
 	color: var(--main-text-color);
-	background-color: #f8d7da;
-	border-color: #f5c6cb;
+	background-color: var(--main-color-bright);
+	border-color: var(--main-color-bright);
 	position: relative;
 	padding: .5rem 1.25rem;
 	border: 1px solid transparent;
