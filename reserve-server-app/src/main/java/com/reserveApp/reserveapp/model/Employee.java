@@ -1,9 +1,7 @@
 package com.reserveApp.reserveapp.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Employee {
@@ -17,6 +15,14 @@ public class Employee {
     private String type; // do zmiany na enum
     private String freeTerms;
     private String occupiedTerms;
+    @ManyToOne
+    private Salon salon;
+    @OneToMany
+    private List<Service> service;
+    @OneToMany
+    private List<Calendar> calendar;
+    @OneToMany
+    private List<Appointment> appointment;
 
     public String getName() {
         return name;
@@ -72,5 +78,37 @@ public class Employee {
 
     public void setOccupiedTerms(String occupiedTerms) {
         this.occupiedTerms = occupiedTerms;
+    }
+
+    public Salon getSalon() {
+        return salon;
+    }
+
+    public void setSalon(Salon salon) {
+        this.salon = salon;
+    }
+
+    public List<Service> getService() {
+        return service;
+    }
+
+    public void setService(List<Service> service) {
+        this.service = service;
+    }
+
+    public List<Calendar> getCalendar() {
+        return calendar;
+    }
+
+    public void setCalendar(List<Calendar> calendar) {
+        this.calendar = calendar;
+    }
+
+    public List<Appointment> getAppointment() {
+        return appointment;
+    }
+
+    public void setAppointment(List<Appointment> appointment) {
+        this.appointment = appointment;
     }
 }

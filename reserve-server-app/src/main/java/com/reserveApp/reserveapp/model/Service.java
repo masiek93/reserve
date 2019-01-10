@@ -1,9 +1,7 @@
 package com.reserveApp.reserveapp.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Service {
@@ -14,6 +12,10 @@ public class Service {
     private String duration;
     private String price;
     private String description;
+    @ManyToOne
+    private Employee employee;
+    @OneToMany
+    private List<Appointment> appointment;
 
     public String getName() {
         return name;
@@ -45,5 +47,21 @@ public class Service {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
+    public List<Appointment> getAppointment() {
+        return appointment;
+    }
+
+    public void setAppointment(List<Appointment> appointment) {
+        this.appointment = appointment;
     }
 }
