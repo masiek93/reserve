@@ -5,10 +5,11 @@ import { ServiceComponent } from './service/service.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 const routes: Routes = [
-{ path: '', redirectTo: '/service', pathMatch: 'full' },
 { path: 'service', component: ServiceComponent },
 { path: 'term', component: TermComponent },
-{ path: 'confirmation', component: ConfirmationComponent }
+{ path: 'confirmation', component: ConfirmationComponent },
+{ path: '', redirectTo: '/service', pathMatch: 'full' },
+{ path: '**', component: ServiceComponent }
 ];
 
 @NgModule({
