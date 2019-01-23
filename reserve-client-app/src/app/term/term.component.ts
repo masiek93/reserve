@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TermComponent implements OnInit {
 
+  onClick(event){
+    console.log(event);
+  }
+
+  hours = ['9:00','9:30','10:00','10:30','11:00','11:30',];
+
   constructor() { }
 
   ngOnInit() {
