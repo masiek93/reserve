@@ -13,6 +13,7 @@ import { TermComponent } from './term/term.component';
 import { ServiceComponent } from './service/service.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AppRoutingModule } from './app-routing.module';
     TermComponent,
     ServiceComponent,
     ConfirmationComponent,
-    FooterComponent
+    FooterComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,

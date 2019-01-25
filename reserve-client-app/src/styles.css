@@ -85,15 +85,6 @@ h1 {
 	width: 800px;
 }
 
-.progress_bar {
-    width: 110%;
-    margin: auto;
-    padding: 30px 0 20px 0;
-    display: inline-block;
-    width: 100%;
-    vertical-align: middle;
-}
-
 .progress_bar_step {
   list-style-type: none;
   float: left;
@@ -118,6 +109,10 @@ h1 {
   font-size: 20px;
 }
 
+.progress_bar_step_circle.before {
+  opacity: 0.3;
+}
+
 .progress_bar_step_title{
   font-size: 17px;
 }
@@ -133,7 +128,15 @@ h1 {
 
 .progressbar_before{
   color: var(--main-color);
-  opacity: 0.3;
+}
+
+.liner {
+  height: 3px;
+  background:var(--main-color);
+  position: relative;
+  width: 69%;
+  margin: 0 auto;
+  top: 22px;
 }
 
 .nav-item{
