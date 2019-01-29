@@ -27,7 +27,13 @@ export class FormData {
 export class ServiceModel {
     serviceType = '';
     duration = '';
-    prize = '';
+    price = '';
+
+    constructor(serviceType: string, duration: string, price: string) {
+        this.serviceType = serviceType;
+        this.duration = duration;
+        this.price = price;
+    }
 }
 
 export class TermModel {
