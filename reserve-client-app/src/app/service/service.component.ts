@@ -35,7 +35,7 @@ export class ServiceComponent implements OnInit {
 
   goToNext(service: any) {
     this.save(service);
-    this.FormDataService.incrementStep();
+    this.formDataService.incrementStep();
     this.router.navigate(['/term']);
   }
 }

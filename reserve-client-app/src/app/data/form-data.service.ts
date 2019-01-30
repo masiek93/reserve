@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { FormData, ServiceModel, TermModel, ConfirmationModel } from './form-data.model';
-import { ProgressBarComponent } from './../progress-bar/progress-bar.component';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -9,12 +9,16 @@ import { ProgressBarComponent } from './../progress-bar/progress-bar.component';
 export class FormDataService {
 
     private formData: FormData = new FormData();
-    private progressBar: ProgressBarComponent = new ProgressBarComponent();
     private isConfirmationFormValid = false;
+    private messageSource = new BehaviorSubject(0);
+    currentMessage = this.messageSource.asObservable();
 
     constructor() {
-
     }
+
+    // changeMessage(message: string) {
+    //     this.messageSource.next(message);
+    //   }
 
     getServiceFormData(): ServiceModel {
         const service: ServiceModel = {
@@ -59,19 +63,19 @@ export class FormDataService {
         this.formData.time = '';
     }
 
-    incrementStep(){
+    incrementStep() {
         this.formData.step++;
+        this.messageSource.next(this.formData.step);
     }
 
-    decrementStep(){
+    decrementStep() {
         this.formData.step--;
+        this.messageSource.next(this.formData.step);
     }
 
-    getStep(){
-      return this.formData.step;
+    getStep() {
+        return this.formData.step;
     }
-
-
 
     getFormData(): FormData {
         return this.formData;

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
+import { FormDataService } from './../data/form-data.service';
 import { ProgressBarComponent } from './../progress-bar/progress-bar.component';
 
 @Component({
@@ -9,9 +11,15 @@ import { ProgressBarComponent } from './../progress-bar/progress-bar.component';
 })
 export class ConfirmationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private formDataService: FormDataService) { }
 
   ngOnInit() {
+  }
+
+  goToPrevious() {
+    this.formDataService.clearTermFormData();
+    this.formDataService.decrementStep();
+    this.router.navigate(['/term']);
   }
 
 }

@@ -31,11 +31,13 @@ export class TermComponent implements OnInit {
 
   goToPrevious() {
     this.formDataService.clearServiceFormData();
+    this.formDataService.decrementStep();
     this.router.navigate(['/service']);
   }
 
   goToNext(term: any) {
     // this.save(term);
+    this.formDataService.incrementStep();
     this.router.navigate(['/confirmation']);
   }
 }

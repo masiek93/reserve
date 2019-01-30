@@ -10,11 +10,15 @@ import { FormData } from './../data/form-data.model';
 })
 export class ProgressBarComponent implements OnInit {
 
-  step: string;
+  step: number;
 
-  constructor(private formDataService: FormDataService) { }
+  constructor(private formDataService: FormDataService) {
+    this.step = formDataService.getFormData().step;
+  }
 
   ngOnInit() {
-    this.step = this.formDataService.getStep();
+    // this.step = this.formDataService.getStep();
+    this.formDataService.currentMessage.subscribe(message => this.step = message);
+    console.log('PB #1');
   }
 }
