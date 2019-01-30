@@ -3,34 +3,38 @@ import { Injectable } from '@angular/core';
 import { FormData, ServiceModel, TermModel, ConfirmationModel } from './form-data.model';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class FormDataService {
 
-  private formData: FormData = new FormData();
+    private formData: FormData = new FormData();
     private isConfirmationFormValid = false;
 
-    constructor() {}
+    constructor() { }
 
     getServiceFormData(): ServiceModel {
         const service: ServiceModel = {
-          serviceType: this.formData.serviceType,
-          duration: this.formData.duration,
-          price: this.formData.price,
+            serviceType: this.formData.serviceType,
+            duration: this.formData.duration,
+            price: this.formData.price,
         };
 
         return service;
     }
 
     setServiceFormData(data: ServiceModel) {
-        // Update the ServiceModel data
         this.formData.serviceType = data.serviceType;
         this.formData.duration = data.duration;
         this.formData.price = data.price;
     }
 
-    getTerFormData(): TermModel {
-        // Return the TermModel data
+    clearServiceFormData() {
+        this.formData.serviceType = '';
+        this.formData.duration = '';
+        this.formData.price = '';
+    }
+
+    getTermFormData(): TermModel {
         const term: TermModel = {
             employee: this.formData.employee,
             date: this.formData.date,
@@ -40,14 +44,18 @@ export class FormDataService {
     }
 
     setTermFormData(data: TermModel) {
-        // Update the TermModel data
         this.formData.employee = data.employee;
         this.formData.date = data.date;
         this.formData.time = data.time;
     }
 
+    clearTermFormData() {
+        this.formData.employee = '';
+        this.formData.date = '';
+        this.formData.time = '';
+    }
+
     getFormData(): FormData {
-        // Return the entire Form Data
         return this.formData;
     }
 
@@ -61,7 +69,6 @@ export class FormDataService {
     }
 
     isFormValid() {
-        // Return true if all forms had been validated successfully; otherwise, return false
         return this.isConfirmationFormValid;
     }
 }

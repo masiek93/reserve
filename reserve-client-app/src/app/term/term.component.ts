@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { FormDataService } from './../data/form-data.service';
+import { ServiceModel, TermModel } from '../data/form-data.model';
 
 @Component({
   selector: 'app-term',
@@ -6,17 +10,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./term.component.css']
 })
 export class TermComponent implements OnInit {
+  service: ServiceModel;
+  term: TermModel;
 
   // temporary hours mock to fill available hours
   hours = ['9:00', '9:30', '10:00', '10:30', '11:00', '11:30'];
 
-  onClick(event) {
-    console.log(event);
-  }
-
-  constructor() { }
+  constructor(private router: Router, private formDataService: FormDataService) { }
 
   ngOnInit() {
+    this.service = this.formDataService.getServiceFormData();
+    this.term = this.formDataService.getTermFormData();
   }
 
+  save(term: any) {
+    this.term = term;
+    this.formDataService.setTermFormData(this.term);
+  }
+
+  goToPrevious() {
+    this.formDataService.clearServiceFormData();
+    this.router.navigate(['/service']);
+  }
+
+  goToNext(term: any) {
+    // this.save(term);
+    this.router.navigate(['/confirmation']);
+  }
 }

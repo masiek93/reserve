@@ -1,39 +1,30 @@
-    <div class="row row-term sel-item-info">
-      Usługa:
-      <button type="button" class="btn btn-selected-items" >Strzyżenie męskie</button>
-    </div>
-    <div class="row row-term sel-item-info">
-      Pracownik:
-      <button type="button" class="btn btn-selected-items" >Dowolny Pracownik</button>
-    </div>
-    <div class="row row-term row-date-selector">
-      <div id="selectLeft" class="col-1 btn btn-arrow-left dateSelectorArrows"
-           onClick="dateSelectLeft()"><
-      </div>
-      <div id="dateCol1" class="col-2 border dateSelector" onClick="selectDate(this.id, this.textContent)">29.11</div>
-      <div id="dateCol2" class="col-2 border dateSelector" onClick="selectDate(this.id, this.textContent)">30.11</div>
-      <div id="dateCol3" class="col-2 border dateSelector active" onClick="selectDate(this.id, this.textContent)">01.12</div>
-      <div id="dateCol4" class="col-2 border dateSelector" onClick="selectDate(this.id, this.textContent)">02.12</div>
-      <div id="dateCol5" class="col-2 border dateSelector" onClick="selectDate(this.id, this.textContent)">03.12</div>
-      <div id="selectRight" class="col-1 btn btn-info btn-arrow-right dateSelectorArrows" onClick="dateSelectRight()">></div>
-    </div>
-    <div class="row row-term row-text">
-      <div class="col">Wybierz godzinę:</div>
-    </div>
-    <div class="row row-term">
-      <div class="col timeSelector">
-        <button type="button" class="btn btn-time" (click)="onClick($event)">9:00</button>
-        <button type="button" class="btn btn-time" onClick="selectTime(this.textContent)">9:30</button>
-        <button type="button" class="btn btn-time" onClick="selectTime(this.textContent)">10:00</button>
-        <button type="button" class="btn btn-time" onClick="selectTime(this.textContent)">10:30</button>
-        <button type="button" class="btn btn-time" onClick="selectTime(this.textContent)">11:00</button>
-        <button type="button" class="btn btn-time" onClick="selectTime(this.textContent)">11:30</button>
-      </div>
-      <div class="col timeSelector">
-      <button *ngFor="let hour of hours" type="button" class="btn btn-time" onClick="selectTime(this.textContent)">{{hour}}</button>
-      </div>
-    </div>
-    <div class="row row-term row-text row-nav-link-back">
-      <div class="col-6"><button type="button" class="btn step back" routerLink="/service">Wstecz</button></div>
-      <div class="col-6"><button type="button" class="btn step next" routerLink="/confirmation">Dalej</button></div>
-    </div><br /><br />
+<div class="row row-term sel-item-info">
+  Usługa:
+  <button type="button" class="btn btn-selected-items">{{ service.serviceType }}</button>
+</div>
+<div class="row row-term sel-item-info">
+  Pracownik:
+  <button type="button" class="btn btn-selected-items">Dowolny Pracownik</button>
+</div>
+<div class="row row-term row-date-selector">
+  <div id="selectLeft" class="col-1 btn btn-arrow-left dateSelectorArrows" onClick="dateSelectLeft()">
+    < </div> <div id="dateCol1" class="col-2 border dateSelector" onClick="selectDate(this.id, this.textContent)">29.11
+  </div>
+  <div id="dateCol2" class="col-2 border dateSelector" onClick="selectDate(this.id, this.textContent)">30.11</div>
+  <div id="dateCol3" class="col-2 border dateSelector active" onClick="selectDate(this.id, this.textContent)">01.12</div>
+  <div id="dateCol4" class="col-2 border dateSelector" onClick="selectDate(this.id, this.textContent)">02.12</div>
+  <div id="dateCol5" class="col-2 border dateSelector" onClick="selectDate(this.id, this.textContent)">03.12</div>
+  <div id="selectRight" class="col-1 btn btn-info btn-arrow-right dateSelectorArrows" onClick="dateSelectRight()">></div>
+</div>
+<div class="row row-term row-text">
+  <div class="col">Wybierz godzinę:</div>
+</div>
+<div class="row row-term">
+  <div class="col timeSelector">
+    <button *ngFor="let hour of hours" type="button" class="btn btn-time" onClick="selectTime(this.textContent)">{{hour}}</button>
+  </div>
+</div>
+<div class="row row-term row-text row-nav-link-back">
+  <div class="col-6"><button type="button" class="btn step back" (click)="goToPrevious()">Wstecz</button></div>
+  <div class="col-6"><button type="button" class="btn step next" (click)="goToNext(hour)">Dalej</button></div>
+</div><br /><br />

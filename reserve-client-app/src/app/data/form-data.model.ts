@@ -40,6 +40,12 @@ export class TermModel {
     employee = '';
     date = '';
     time = '';
+
+    constructor(employee: string, date: string, time: string) {
+        this.employee = employee;
+        this.date = date;
+        this.time = time;
+    }
 }
 
 export class ConfirmationModel {
@@ -47,4 +53,11 @@ export class ConfirmationModel {
     lastName = '';
     email = '';
     phoneNumber = '';
+
+    constructor(firstName: string, lastName: string, email: string, phoneNumber: string) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+    }
 }

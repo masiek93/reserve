@@ -29,10 +29,9 @@ export class ServiceComponent implements OnInit {
     this.service = this.formDataService.getServiceFormData();
   }
 
-  save(service: any): boolean {
+  save(service: any) {
     this.service = service;
     this.formDataService.setServiceFormData(this.service);
-    return true;
   }
 
   goToNext(service: any) {
