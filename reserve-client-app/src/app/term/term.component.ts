@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { FormDataService } from './../data/form-data.service';
 import { ServiceModel, TermModel } from '../data/form-data.model';
+import { ProgressBarComponent } from './../progress-bar/progress-bar.component';
 
 @Component({
   selector: 'app-term',

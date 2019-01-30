@@ -9,6 +9,7 @@ export class FormData {
     lastName = '';
     email = '';
     phoneNumber = '';
+    step = 0;
 
     clear() {
         this.serviceType = '';

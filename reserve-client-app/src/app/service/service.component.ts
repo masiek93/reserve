@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { FormDataService } from './../data/form-data.service';
 import { ServiceModel } from './../data/form-data.model';
 
-
 @Component({
   selector: 'app-service',
   templateUrl: './service.component.html',
@@ -36,8 +35,7 @@ export class ServiceComponent implements OnInit {
 
   goToNext(service: any) {
     this.save(service);
+    this.FormDataService.incrementStep();
     this.router.navigate(['/term']);
   }
-
 }
-
