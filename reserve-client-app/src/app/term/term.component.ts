@@ -10,7 +10,7 @@ export class TermComponent implements OnInit {
   // temporary hours mock to fill available hours
   hours = ['9:00', '9:30', '10:00', '10:30', '11:00', '11:30'];
 
-  onClick(event){
+  onClick(event) {
     console.log(event);
   }
 

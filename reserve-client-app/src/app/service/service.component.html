@@ -2,5 +2,7 @@
   <div id="serviceType" class="col-12 col-sm-6 col-md-3 service">{{service.serviceType}}</div>
   <div class="col-12 col-sm-6 col-md-3 service"><i class="far fa-clock icon"></i>{{service.duration}}</div>
   <div class="col-12 col-sm-6 col-md-3 service"><i class="fas fa-dollar-sign icon"></i>{{service.price}}</div>
-  <div class="col-12 col-sm-6 col-md-3 service"><a routerLink="/term"><button type="button" class="btn btn-selected-items">Wybierz</button></a></div>
+  <div class="col-12 col-sm-6 col-md-3 service">
+    <button type="button" class="btn btn-selected-items" (click)="goToNext(service)">Wybierz</button>
+  </div>
 </div>

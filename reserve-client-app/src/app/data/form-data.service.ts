@@ -8,8 +8,6 @@ import { FormData, ServiceModel, TermModel, ConfirmationModel } from './form-dat
 export class FormDataService {
 
   private formData: FormData = new FormData();
-    private isServiceFormValid = false;
-    private isTermFormValid = false;
     private isConfirmationFormValid = false;
 
     constructor() {}
@@ -18,7 +16,7 @@ export class FormDataService {
         const service: ServiceModel = {
           serviceType: this.formData.serviceType,
           duration: this.formData.duration,
-          prize: this.formData.prize,
+          price: this.formData.price,
         };
 
         return service;
@@ -26,13 +24,12 @@ export class FormDataService {
 
     setServiceFormData(data: ServiceModel) {
         // Update the ServiceModel data
-        this.isServiceFormValid = true;
         this.formData.serviceType = data.serviceType;
         this.formData.duration = data.duration;
-        this.formData.prize = data.prize;
+        this.formData.price = data.price;
     }
 
-    getTerm(): TermModel {
+    getTerFormData(): TermModel {
         // Return the TermModel data
         const term: TermModel = {
             employee: this.formData.employee,
@@ -42,7 +39,7 @@ export class FormDataService {
         return term;
     }
 
-    setTerm(data: TermModel) {
+    setTermFormData(data: TermModel) {
         // Update the TermModel data
         this.formData.employee = data.employee;
         this.formData.date = data.date;
@@ -59,14 +56,12 @@ export class FormDataService {
         // this.workflowService.resetSteps();
         // Return the form data after all this.* members had been reset
         this.formData.clear();
-        this.isServiceFormValid = this.isTermFormValid = this.isConfirmationFormValid = false;
+        this.isConfirmationFormValid = false;
         return this.formData;
     }
 
     isFormValid() {
         // Return true if all forms had been validated successfully; otherwise, return false
-        return this.isServiceFormValid &&
-                this.isTermFormValid &&
-                this.isConfirmationFormValid;
+        return this.isConfirmationFormValid;
     }
 }

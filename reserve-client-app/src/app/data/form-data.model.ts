@@ -1,7 +1,7 @@
 export class FormData {
     serviceType = '';
     duration = '';
-    prize = '';
+    price = '';
     employee = '';
     date = '';
     time = '';
@@ -13,7 +13,7 @@ export class FormData {
     clear() {
         this.serviceType = '';
         this.duration = '';
-        this.prize = '';
+        this.price = '';
         this.employee = '';
         this.date = '';
         this.time = '';
