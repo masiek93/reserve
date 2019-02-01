@@ -7,22 +7,13 @@
   Pracownik:
   <button type="button" class="btn btn-selected-items">Dowolny Pracownik</button>
 </div>
-<div class="row row-term row-date-selector">
-  <div id="selectLeft" class="col-1 btn btn-arrow-left dateSelectorArrows" onClick="dateSelectLeft()">
-    < </div> <div id="dateCol1" class="col-2 border dateSelector" onClick="selectDate(this.id, this.textContent)">29.11
-  </div>
-  <div id="dateCol2" class="col-2 border dateSelector" onClick="selectDate(this.id, this.textContent)">30.11</div>
-  <div id="dateCol3" class="col-2 border dateSelector active" onClick="selectDate(this.id, this.textContent)">01.12</div>
-  <div id="dateCol4" class="col-2 border dateSelector" onClick="selectDate(this.id, this.textContent)">02.12</div>
-  <div id="dateCol5" class="col-2 border dateSelector" onClick="selectDate(this.id, this.textContent)">03.12</div>
-  <div id="selectRight" class="col-1 btn btn-info btn-arrow-right dateSelectorArrows" onClick="dateSelectRight()">></div>
+<div class="row row-term row-text" style="margin-bottom:20px;">
+  <div class="col">Wybierz datę i godzinę:</div>
 </div>
-<div class="row row-term row-text">
-  <div class="col">Wybierz godzinę:</div>
-</div>
+<date-select></date-select>
 <div class="row row-term">
   <div class="col timeSelector">
-    <button *ngFor="let hour of hours" type="button" class="btn btn-time" onClick="selectTime(this.textContent)">{{hour}}</button>
+    <button *ngFor="let hour of hours" type="button" class="btn btn-time" (click)="selectTime($event)">{{hour}}</button>
   </div>
 </div>
 <div class="row row-term row-text row-nav-link-back">

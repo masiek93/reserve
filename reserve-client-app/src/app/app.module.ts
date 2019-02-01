@@ -14,6 +14,7 @@ import { ServiceComponent } from './service/service.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { DateSelectComponent } from './date-select/date-select.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProgressBarComponent } from './progress-bar/progress-bar.component';
     ServiceComponent,
     ConfirmationComponent,
     FooterComponent,
-    ProgressBarComponent
+    ProgressBarComponent,
+    DateSelectComponent
   ],
   imports: [
     BrowserModule,

@@ -40,4 +40,8 @@ export class TermComponent implements OnInit {
     this.formDataService.incrementStep();
     this.router.navigate(['/confirmation']);
   }
+
+  selectTime(event) {
+    console.log('selectTime: ', event.target.textContent);
+}
 }
