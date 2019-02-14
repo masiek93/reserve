@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { FormDataService } from './../data/form-data.service';
 import { ProgressBarComponent } from './../progress-bar/progress-bar.component';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-confirmation',
@@ -10,8 +11,18 @@ import { ProgressBarComponent } from './../progress-bar/progress-bar.component';
   styleUrls: ['./confirmation.component.css']
 })
 export class ConfirmationComponent implements OnInit {
+  myForm: FormGroup;
+  post:any;
+  constructor(private router: Router, private formDataService: FormDataService, private fb: FormBuilder) {
+    this.myForm = fb.group({
+      'name' : [null, Validators.required],
+    });
+    
+   }
 
-  constructor(private router: Router, private formDataService: FormDataService) { }
+   addPost(post) {
+    alert("Post: "+post.name)
+    }
 
   ngOnInit() {
   }
