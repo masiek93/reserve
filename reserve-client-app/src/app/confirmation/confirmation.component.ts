@@ -10,18 +10,23 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './confirmation.component.html',
   styleUrls: ['./confirmation.component.css']
 })
+
 export class ConfirmationComponent implements OnInit {
+  emailReg = /^[a-z\d]+[\w\d.-]*@(?:[a-z\d]+[a-z\d-]+\.){1,5}[a-z]{2,6}$/i;
+  phoneReg = /^[0-9]{7,9}$/i;
   myForm: FormGroup;
-  post:any;
+  post: any;
   constructor(private router: Router, private formDataService: FormDataService, private fb: FormBuilder) {
     this.myForm = fb.group({
-      'name' : [null, Validators.required],
+      'firstName' : [null, Validators.required],
+      'lastName' : [null, Validators.required],
+      'email' : [null, Validators.compose([Validators.required, Validators.pattern(this.emailReg)])],
+      'phoneNumber' : [null, Validators.compose([Validators.required, Validators.pattern(this.phoneReg)])]
     });
-    
    }
 
    addPost(post) {
-    alert("Post: "+post.name)
+    alert('Post: ' + post.name);
     }
 
   ngOnInit() {

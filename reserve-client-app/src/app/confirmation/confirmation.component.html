@@ -9,22 +9,22 @@
     <form class="row" [formGroup]="myForm" (ngSubmit)="addPost(myForm.value)">
       <div class="col-12 col-sm-6 form-group form_formularz">
         <label for="exampleFormControlInput1">Imię</label>
-        <input formControlName="name" type="text" class="form-control" id="exampleFormControlInput1">
+        <input formControlName="firstName" type="text" class="form-control" id="firstName">
       </div>
       <div class="col-12 col-sm-6 form-group form_formularz">
         <label for="exampleFormControlInput1">Nazwisko</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1">
+        <input formControlName="lastName" type="text" class="form-control" id="lastName">
       </div>
       <div class="col-12 col-sm-6 form-group form_formularz">
         <label for="exampleFormControlInput1">E-mail</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1">
+        <input formControlName="email" type="text" class="form-control" id="email">
       </div>
-      <div class="col-12 col-sm-6 form-group form_formularz">
+      <div class="col-12 col-sm-6 form-group form_formularz ">
         <label for="exampleFormControlInput1">Telefon</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1">
+        <input formControlName="phoneNumber" type="text" class="form-control {{myForm.valid ? '' : 'has-error' }}" id="phoneNumber">
       </div>
     </form>
     <div class="row row-term row-text row-nav-link-back">
       <div class="col-6"><button type="button" class="btn step back" (click)="goToPrevious()">Wstecz</button></div>
-      <div class="col-6"><button type="button" class="btn step next" routerLink="/confirmation" >Rezerwuj</button></div>
+      <div class="col-6"><button [disabled]="!myForm.valid" type="button" class="btn step next" routerLink="/confirmation" >Rezerwuj</button></div>
     </div><br /><br />
