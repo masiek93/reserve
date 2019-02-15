@@ -30,7 +30,7 @@ import { DateSelectComponent } from './date-select/date-select.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
