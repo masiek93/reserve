@@ -14,9 +14,6 @@ export class TermComponent implements OnInit {
   service: ServiceModel;
   term: TermModel;
 
-  // temporary hours mock to fill available hours
-  hours = ['9:00', '9:30', '10:00', '10:30', '11:00', '11:30'];
-
   constructor(private router: Router, private formDataService: FormDataService) { }
 
   ngOnInit() {
@@ -40,8 +37,4 @@ export class TermComponent implements OnInit {
     this.formDataService.incrementStep();
     this.router.navigate(['/confirmation']);
   }
-
-  selectTime(event) {
-    console.log('selectTime: ', event.target.textContent);
-}
 }

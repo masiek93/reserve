@@ -10,7 +10,9 @@ export class DateSelectComponent implements OnInit {
     // hardcoded mock (later will be replaced with values from db
     calendar = ['29.11', '30.11', '1.12', '2.12', '3.12', '4.12', '5.12',
         '6.12', '7.12', '8.12', '9.12', '10.12', '11.12', '12.12', '13.12', '14.12', '15.12', '16.12', '17.12'];
-    availableHours = ['7:00', '7:30', '8:00', '8:30', '9:00', '9:30', '10:00', '10:30', '11:00', '11:30', '12:00', '12:30'];
+
+    // hours = ['7:00', '7:30', '8:00', '8:30', '9:00', '9:30', '10:00', '10:30', '11:00', '11:30', '12:00',
+    //     '12:30', '13:00', '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30'];
 
     calendarMap =
         {
@@ -36,6 +38,7 @@ export class DateSelectComponent implements OnInit {
         };
     // / hardcoded mock
 
+    hours = [];
     calPosition = 0;
     selectedDate: string;
     dateSelectors: HTMLCollectionOf<Element>;
@@ -46,16 +49,26 @@ export class DateSelectComponent implements OnInit {
         console.log('Date selector');
         this.dateSelectors = document.getElementsByClassName('dateSelector');
         this.fillDates(this.dateSelectors, this.calPosition);
-        this.selectedDate = document.getElementsByClassName('active')[0].textContent;
+        this.updateAll();
         console.log('init | selectedDate ', this.selectedDate);
     }
 
-    fillDates(dateSelectors, position) {
+    fillDates(dateSelectors: any, position: any) {
         console.log('fillDates | calPosition', this.calPosition);
         let j = position;
+        let lastEnabledIndex = 0;
         const dates = Object.keys(this.calendarMap);
         for (let i = 0; i < dateSelectors.length; i++) {
-            dateSelectors[i].textContent = dates[j];
+            if (j < dates.length) {
+                dateSelectors[i].textContent = dates[j];
+                dateSelectors[i].classList.remove('dateSelectorDisabled');
+                lastEnabledIndex = i;
+            } else {
+                dateSelectors[i].textContent = '';
+                dateSelectors[i].classList.add('dateSelectorDisabled');
+                console.log('dateSelectors[lastEnabledIndex].id ', dateSelectors[lastEnabledIndex].id);
+                this.selectDateById(dateSelectors[lastEnabledIndex].id);
+            }
             j++;
         }
     }
@@ -67,6 +80,7 @@ export class DateSelectComponent implements OnInit {
             this.calPosition -= 4;
             this.fillDates(dateSelectors, this.calPosition);
         }
+        this.updateAll();
     }
 
     dateSelectRight() {
@@ -76,10 +90,12 @@ export class DateSelectComponent implements OnInit {
             this.calPosition += 4;
             this.fillDates(dateSelectors, this.calPosition);
         }
+        this.updateAll();
     }
 
-    selectDate(event) {
-        console.log('selectDate: ', event.target.id);
+    selectDate(event: any) {
+        // TODO zastanowić się czy nie zostawić tlyko metody selectDateById
+        console.log('selectDate: ', event.target.textContent, event.target.id);
         const selectedDate = document.getElementById(event.target.id);
         const dateSelectorElements = document.getElementsByClassName('dateSelector');
 
@@ -87,5 +103,37 @@ export class DateSelectComponent implements OnInit {
             dateSelectorElements[i].classList.remove('active');
         }
         selectedDate.classList.add('active');
+
+        this.updateHours(event.target.textContent);
+    }
+
+    selectDateById(id: string) {
+        const selectedDate = document.getElementById(id);
+        const dateSelectorElements = document.getElementsByClassName('dateSelector');
+
+        for (let i = 0; i < dateSelectorElements.length; i++) {
+            dateSelectorElements[i].classList.remove('active');
+        }
+        selectedDate.classList.add('active');
+
+        this.updateHours(selectedDate.textContent);
+    }
+
+    selectTime(event: any) {
+        console.log('selectTime: ', event.target.textContent);
+    }
+
+    updateSelectedDate() {
+        this.selectedDate = document.getElementsByClassName('active')[0].textContent;
+    }
+
+    updateHours(selectedDate: string) {
+        console.log('fupdateHours | selectedDate ', selectedDate);
+        this.hours = this.calendarMap[selectedDate];
+    }
+
+    updateAll() {
+        this.updateSelectedDate();
+        this.updateHours(this.selectedDate);
     }
 }

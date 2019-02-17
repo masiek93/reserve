@@ -20,11 +20,6 @@
   <div class="col">Wybierz datę i godzinę:</div>
 </div>
 <date-select></date-select>
-<div class="row row-term">
-  <div class="col timeSelector">
-    <button *ngFor="let hour of hours" type="button" class="btn btn-time" (click)="selectTime($event)">{{hour}}</button>
-  </div>
-</div>
 <div class="row row-term row-text row-nav-link-back">
   <div class="col-6"><button type="button" class="btn step back" (click)="goToPrevious()">Wstecz</button></div>
   <div class="col-6"><button type="button" class="btn step next" (click)="goToNext(hour)">Dalej</button></div>
