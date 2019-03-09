@@ -9,6 +9,6 @@
 </div>
 <div class="row row-term">
   <div class="col timeSelector">
-    <button *ngFor="let hour of hours" type="button" class="btn btn-time" (click)="selectTime($event)">{{hour}}</button>
+    <button *ngFor="let hour of hours; index as i" attr.id="hourBtn{{i}}" type="button" class="btn btn-time" (click)="selectTime($event)">{{hour}}</button>
   </div>
 </div>

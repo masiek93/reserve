@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  Output, EventEmitter } from '@angular/core';
 
 @Component({
     // tslint:disable-next-line:component-selector
@@ -41,7 +41,11 @@ export class DateSelectComponent implements OnInit {
     hours = [];
     calPosition = 0;
     selectedDate: string;
+    selectedHour: string;
     dateSelectors: HTMLCollectionOf<Element>;
+
+    @Output() selDateChanged: EventEmitter<string> = new EventEmitter();
+    @Output() selHourChanged: EventEmitter<string> = new EventEmitter();
 
     constructor() { }
 
@@ -103,7 +107,8 @@ export class DateSelectComponent implements OnInit {
             dateSelectorElements[i].classList.remove('active');
         }
         selectedDate.classList.add('active');
-
+        this.updateSelectedDate();
+        this.selDateChanged.emit(this.selectedDate);
         this.updateHours(event.target.textContent);
     }
 
@@ -116,20 +121,44 @@ export class DateSelectComponent implements OnInit {
         }
         selectedDate.classList.add('active');
 
+        this.updateSelectedDate();
         this.updateHours(selectedDate.textContent);
     }
 
     selectTime(event: any) {
         console.log('selectTime: ', event.target.textContent);
+        const selectedTime = document.getElementById(event.target.id);
+        const timeSelectorElements = document.getElementsByClassName('btn-time');
+
+        for (let i = 0; i < timeSelectorElements.length; i++) {
+            timeSelectorElements[i].classList.remove('btn-time-selected');
+        }
+        selectedTime.classList.add('btn-time-selected');
+        this.updateSelectedHour();
+        this.selHourChanged.emit(this.selectedHour);
     }
 
     updateSelectedDate() {
         this.selectedDate = document.getElementsByClassName('active')[0].textContent;
+        this.selDateChanged.emit(this.selectedDate);
     }
 
     updateHours(selectedDate: string) {
         console.log('fupdateHours | selectedDate ', selectedDate);
         this.hours = this.calendarMap[selectedDate];
+    }
+
+    clearSelectedHour() {
+        const timeSelectorElements = document.getElementsByClassName('btn-time');
+        for (let i = 0; i < timeSelectorElements.length; i++) {
+            timeSelectorElements[i].classList.remove('btn-time-selected');
+        }
+        this.selectedHour = '';
+        this.selHourChanged.emit(this.selectedHour);
+    }
+
+    updateSelectedHour() {
+        this.selectedHour = document.getElementsByClassName('btn-time-selected')[0].textContent;
     }
 
     updateAll() {

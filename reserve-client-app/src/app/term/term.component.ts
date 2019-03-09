@@ -13,12 +13,18 @@ import { ProgressBarComponent } from './../progress-bar/progress-bar.component';
 export class TermComponent implements OnInit {
   service: ServiceModel;
   term: TermModel;
+  employee: string;
+  date: string;
+  time: string;
 
   constructor(private router: Router, private formDataService: FormDataService) { }
 
   ngOnInit() {
     this.service = this.formDataService.getServiceFormData();
     this.term = this.formDataService.getTermFormData();
+    this.employee = 'Dowolny Test';
+    this.date = '';
+    this.time = '';
   }
 
   save(term: any) {
@@ -32,9 +38,18 @@ export class TermComponent implements OnInit {
     this.router.navigate(['/service']);
   }
 
-  goToNext(term: any) {
-    // this.save(term);
+  goToNext() {
+    const tempTerm = new TermModel(this.employee, this.date, this.time);
+    this.save(tempTerm);
     this.formDataService.incrementStep();
     this.router.navigate(['/confirmation']);
+  }
+
+  selDateChangedHandler(date: string) {
+    this.date = date;
+  }
+
+  selHourChangedHandler(hour: string) {
+    this.time = hour;
   }
 }

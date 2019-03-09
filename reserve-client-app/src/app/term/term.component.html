@@ -19,8 +19,8 @@
 <div class="row row-term row-text" style="margin-bottom:20px;">
   <div class="col">Wybierz datę i godzinę:</div>
 </div>
-<date-select></date-select>
+<date-select (selDateChanged)="selDateChangedHandler($event)" (selHourChanged)="selHourChangedHandler($event)"></date-select>
 <div class="row row-term row-text row-nav-link-back">
   <div class="col-6"><button type="button" class="btn step back" (click)="goToPrevious()">Wstecz</button></div>
-  <div class="col-6"><button type="button" class="btn step next" (click)="goToNext(hour)">Dalej</button></div>
+  <div class="col-6"><button type="button" class="btn step next" (click)="goToNext('Nadia Blada', '01.12', '10:00')">Dalej</button></div>
 </div><br /><br />
